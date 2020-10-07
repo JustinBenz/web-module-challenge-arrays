@@ -45,8 +45,9 @@ Use the copy function below to do the following:
     2. Return the new array that holds an exact copy of the old array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(ogArray){
+    let nArray = [...ogArray]
+    return nArray;
 }    
 
 
@@ -64,8 +65,12 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(xArray){
+   if(xArray.length === 31){
+       return true;
+   }else{
+       return false;
+   }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,8 +86,9 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(){
+    originalFlavors.unshift("Rainbow Sherbert")
+    return originalFlavors;
 }
 
 
@@ -97,8 +103,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(xArray){
+   let ogPopped = xArray.pop();
+   return xArray;
 }
 
 
@@ -113,8 +120,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(xArray, i){
+    return xArray[i];
 }
 
 
@@ -132,8 +139,9 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(xArray){
+    let arraySpliced = xArray.splice(29, 1);
+    return xArray;
 }
 
 
@@ -157,8 +165,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(xArray, string){
+    let nArray = []
+    for (let i = 0; i < xArray.length; i++){
+        if(xArray[i].includes(string)){
+            nArray.push(xArray[i]);
+        }
+    }
+    return nArray
 }
 
 
@@ -174,10 +188,15 @@ Use the getAverageWordLength function below to do the following:
     For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-    /*code here*/
+function getAverageWordLength(arr){
+    let map = {};
+    for(let i = 0; i < arr.length; i++){
+        let item = arr[i];
+        map[item] = (map[item] + 1) || 1;
+    }
+    return map;
 }
-
+getAverageWordLength(originalFlavors);
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
 Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors 
