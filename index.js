@@ -139,7 +139,7 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(xArray, string){
+function removeFlavorByName(xArray){
     let arraySpliced = xArray.splice(29, 1);
     return xArray;
 }
