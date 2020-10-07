@@ -104,8 +104,8 @@ Use the removeLastFlavor function below to do the following:
 */
 
 function removeLastFlavor(xArray){
-   originalFlavors.pop();
-   return originalFlavors;
+   let ogPopped = xArray.pop();
+   return xArray;
 }
 
 
@@ -139,8 +139,9 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(xArray, string){
+    let arraySpliced = xArray.splice(29, 1);
+    return xArray;
 }
 
 
@@ -164,8 +165,14 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(xArray, string){
+    let nArray = []
+    for (let i = 0; i < xArray.length; i++){
+        if(xArray[i].includes(string)){
+            nArray.push(xArray[i]);
+        }
+    }
+    return nArray
 }
 
 
